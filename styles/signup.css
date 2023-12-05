@@ -1,0 +1,140 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Gugi', cursive;
+}
+
+body {
+    background-image: url(../resources/background.jpg);
+    background-position: center;
+}
+
+header {
+    top: 0;
+    z-index: 1;
+    display: flex;
+    position: sticky;
+    align-items: center;
+    background-size: contain;
+    font-family: 'Tangerine', cursive;
+    height: 3vw;
+    color: white;
+    background-image: url(../resources/giphs/header-giph.gif);
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-size: 50% 100%;
+    background-position-x: 45%;
+    background-repeat: no-repeat;
+    background-image: url(../resources/title-background.png);
+}
+
+header,
+main,
+form {
+    text-align: center;
+}
+
+.cc {
+    margin-bottom: -10px;
+    display: inline-flex;
+    text-decoration: none;
+    position: relative;
+    color: rgb(47, 0, 255);
+    background-color: #10121b;
+    padding: 10px;
+    border-radius: 30px;
+    border: rgb(47, 0, 255) solid 1px;
+    z-index: 2;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    background-color: #15171e;
+    border: solid #15171e 2px;
+    border-radius: 25px;
+    font-weight: bold;
+    width: 20vw;
+    height: 38vh;
+    padding-bottom: 10px;
+    color: rgb(255, 255, 255, .84);
+}
+
+.first_label {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    height: 20%;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="date"] {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.input_buttons {
+    width: 40%;
+    height: 10%;
+    margin-top: 5px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(79, 105, 255);
+    position: relative;
+    top: -2px;
+}
+
+.input_buttons:hover {
+    transition: .25s;
+    transform: scale(115%);
+    cursor: pointer;
+    background-color: rgb(47, 0, 255);
+}
+
+.login {
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.alogin {
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(29, 63, 253);
+}
+
+.alogin:hover {
+    transition: 0.3s;
+    font-size: 1.05em;
+    color: rgb(47, 0, 255);
+}
+.signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75vh;
+}

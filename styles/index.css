@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gugi', cursive;
+}
+a{
+    text-decoration: none;
+}
+header{
+    top: 0;
+    z-index: 1;
+    display: flex;
+    position: sticky;
+    align-items: center;
+    background-size: contain;
+    font-family: 'Tangerine', cursive;
+    height: 3vw;
+    color: white;
+    background-image: url(../resources/giphs/header-giph.gif);
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-size: 50% 100%;
+    background-position-x: 45%;
+    background-repeat: no-repeat;
+    background-image: url(../resources/title-background.png);
+}
+h2 {
+    margin-bottom: 0.8vw;
+}
+.accounts-container{
+    font-size: 1.2em;
+    position: absolute;
+    margin-right: 1.5vw;
+    right: 0;
+}
+.login{
+    margin-right: .5vw;
+}
+.login, .signup{
+    display: inline-flex;
+    text-decoration: none;
+    background-color: black;
+    color: rgb(235, 235, 235);
+    padding: .30vw;
+    border-radius: 7px;
+    border: 1.5px solid rgb(114, 130, 137);
+    transition: all 300ms ease-in-out;
+}
+.signup:hover, .login:hover {
+    transform: scale(105%);
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 8, 32);
+    cursor: pointer;
+}
+main{
+    padding-bottom: 3vw;
+    background-size: 32%;
+    background-image: url(../resources/background.jpg);
+}
+.section-title{
+    padding-top: 1vw;
+    text-align: center;
+    margin-bottom: 1vw;
+    color: rgb(168, 178, 255);
+}
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    padding-bottom: 1vw;
+    border-radius: 25px;
+    background-image: url(../resources/background02.png);
+}
+img{
+    height: 177px;
+    width: 317px;
+    display: flex;
+    transition: all 400ms ease-in-out;
+}
+img:hover{
+    transform: scale(105%);
+}
+.games article img {
+    border-radius: 5px;
+}
+.centrado {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    margin-top: .5vw;
+}
+#lol, #valorant, #gta, #genshin, #counter, #minecraft, #fortnite, #warzone, #wow, #overwatch, #dota{
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    width: 300px;
+    height: 200px;
+    margin-top: 6vh;
+    font-weight: bold;
+    font-size: 1.25rem;
+    justify-content: center;
+    flex-basis: calc(33.33% - 10px);
+}
+@media only screen and (min-width:1600px){
+    #lol, #valorant, #gta, #genshin, #counter, #minecraft, #fortnite, #warzone, #wow, #overwatch, #dota{
+        flex-basis: calc(25% - 200px)
+    }
+}
+.info{
+    margin: 3vw 12vw 0 12vw;
+    color: whitesmoke;
+    font-weight: bold;
+}
+.info-h2{
+    text-align: center;
+}
+.contact{
+    margin-top: 0;
+}
+.footer{
+    position: relative;
+    padding: .5vw 0 .5vw 0;
+    background-color: rgb(22, 22, 22);
+}
+footer p{
+    margin-top: 0;
+    align-items: center;
+}
+footer a{
+    position: relative;
+    display: inline-flex;
+    text-decoration: dotted;
+    color: rgb(150, 182, 247);
+    left: 12.5px;
+}
+footer img{
+    position: relative;
+    opacity: 77%;
+    height: 25px;
+    width: 25px;
+    left: 5px;
+}
+footer p:nth-child(2){
+    margin-top: .25vw;
+}
+@media only screen and (max-width: 700px){
+    header{
+        height: 20vw;
+        display: flex;
+        flex-direction: column;
+        position: static;
+    }
+    .title-container{
+        background: none;
+        padding: 5px;
+    }
+    
+    #Title{
+        background-color: black;
+    }
+    .accounts-container{
+        display: block;
+        position: static;
+        transform: scale(90%);
+        padding-bottom: .5vh;
+    }
+    #lol, #valorant, #gta, #genshin, #counter, #minecraft, #fortnite, #warzone, #wow, #overwatch, #dota{
+        margin-top: .5vh;
+    }
+    article img {
+        transform: scale(80%);
+    }
+    article img:hover{
+        transform: scale(85%);
+    }
+    article p.centrado{
+        margin-top: -2vh;
+    }
+}
