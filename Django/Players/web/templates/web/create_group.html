@@ -1,0 +1,18 @@
+{% extends 'web/base-general.html' %}
+{% load static %}
+
+{% block title %} Only One: crear grupo {% endblock %}
+
+{% block stylesheet %} {% static 'web/styles/create-group.css' %} {% endblock %}
+
+{% block main %} 
+    <h3>Complete los campos para crear un equipo</h3>
+    <div class="form_container">
+        <form method="POST" action="{% url 'create_group' %}">
+            {% csrf_token%}
+            {{ form.as_p }}
+
+            <input type="submit" style="color: white; font-family: Cambria, Cochin">
+        </form>
+    </div>
+{% endblock %}

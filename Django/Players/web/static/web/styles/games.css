@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gugi', cursive;
+}
+a{
+    text-decoration: none;
+}
+.centrado {
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    margin-top: .5vw;
+}
+header{
+    top: 0;
+    z-index: 1;
+    display: flex;
+    position: sticky;
+    align-items: center;
+    background-size: contain;
+    font-family: 'Tangerine', cursive;
+    height: 3vw;
+    background-image: url(../resources/giphs/header-giph.gif);
+}
+a h1{
+    color: whitesmoke;
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-size: 50% 100%;
+    background-position-x: 45%;
+    background-repeat: no-repeat;
+    background-image: url(../resources/title-background.png);
+}
+.accounts-container{
+    right: 0;
+    font-size: 1.2em;
+    position: absolute;
+    margin-right: 1.5vw;
+}
+.login{
+    margin-right: .5vw;
+}
+.login, .signup{
+    display: inline-flex;
+    text-decoration: none;
+    background-color: black;
+    color: rgb(235, 235, 235);
+    padding: .3vw;
+    border-radius: 7px;
+    border: 1.5px solid rgb(114, 130, 137);
+    transition: all 300ms ease-in-out;
+}
+.signup:hover, .login:hover {
+    transform: scale(105%);
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 8, 32);
+    cursor: pointer;
+}
+body{
+    background-color:  rgb(28,28,31);
+}
+nav{
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(22, 22, 22); */
+    padding-bottom: 7px;
+}
+nav a{
+    color: rgb(0, 117, 180);
+}
+body{
+    background-size: 32%;
+    /* background-position-y: 10%; */
+    background-image: url(../resources/background.jpg);
+}
+main{
+    padding-bottom: 5vw;
+}
+.find-players, .find-group {
+    display: inline-block;
+    margin: 1vw 0 0 .5vw;
+}
+.groups-title, form{
+    margin: 1vw 0 0 0vw;
+    color: rgb(225, 225, 225);
+}
+.groups-title{
+    margin-top: 2vw;
+    display: inline-flex;
+    display: flex;
+    justify-content: center;
+}
+.create-group-container{
+    text-align: center;
+    justify-content: center;
+    margin-top: 1.5vw;
+    width: 33.1vw;
+}
+.create-group{
+    width: 150px;
+    padding: 4px;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    display: inline-block;
+    color: rgb(197, 197, 197);
+    background-color: rgb(54, 0, 147);
+    transition: all .25s ease;
+}
+.create-group:hover{
+    transform: scale(120%);
+    background-color: rgb(66, 0, 180);
+}
+
+form, select, option{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+label:nth-child(2), input[type="submit"]{
+    margin-left: .5vw;
+    padding: 2px;
+}
+input, option{
+    font-family: 'Times New Roman', Times, serif;
+}
+select { 
+    height: 1.4vw;
+    width: 3.6vw;
+}
+.filter option{
+    font-weight: bold;
+    font-family: serif;
+    margin: 0;
+}
+.filter{
+    text-align: center;
+}
+.servers{
+    width: 4vw;
+    font-size: 0.77rem;
+    color: rgb(0, 83, 128);
+}
+.gamemodes{
+    width: 8.8vw;
+    color: rgb(0, 83, 128);
+}
+.crud{
+}
+.crud img{
+    width: 32px;
+    height: 32px;
+    right: 10px;
+    top: 86px;
+    position: absolute;
+}
+.crud a:first-child img{
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 55px;
+}
+.empty-container{
+    display: flex;
+    margin-top: .5vw;
+    font-weight: bold;
+    color: red;
+    width: 100%;
+    justify-content: center;
+}
+.group-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+}
+article div{
+    display: flex;
+    justify-content: space-between;
+}
+.groups {
+    padding: 1vw;
+    flex-basis: 25%;
+    font-weight: bold;
+    position: relative;
+    margin: 2vw 3vw 0 3vw; 
+    border: 1px solid rgb(83, 133, 155);
+    background-color: rgb(93, 135, 155);
+}
+.players{
+    justify-content: flex-end;
+}
+li{
+    margin-left: 25px;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+.available{
+    font-weight: bold;
+}
+@media only screen and (min-width:1450px){
+    .groups{
+        flex-basis: 25%;
+    }
+}
+.contact {
+    margin-top: 0;
+}
+footer{
+    position: relative;
+    padding: 1vw 0 1vw 0;
+    background-color: rgb(22, 22, 22);
+}
+.footer div{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+footer p{
+    margin-top: 0;
+    align-items: center;
+}
+footer a{
+    position: relative;
+    display: inline-flex;
+    text-decoration: dotted;
+    color: rgb(150, 182, 247);
+    left: 12.5px;
+}
+footer img{
+    position: relative;
+    opacity: 77%;
+    height: 25px;
+    width: 25px;
+    left: 5px;
+}
+footer p:nth-child(2){
+    margin-top: .25vw;
+}

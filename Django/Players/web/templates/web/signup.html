@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creación de cuenta</title>
-    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../../static/web/styles/signup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Alice&family=Berkshire+Swash&family=Cinzel&family=Delius&family=EB+Garamond&family=Fredericka+the+Great&family=Great+Vibes&family=Gugi&family=Henny+Penny&family=Homemade+Apple&family=IBM+Plex+Serif&family=IM+Fell+English+SC&family=Julius+Sans+One&family=La+Belle+Aurore&family=Lemonada&family=Macondo&family=Old+Standard+TT:ital@0;1&family=Pinyon+Script&family=Rubik+Marker+Hatch&family=Rubik+Microbe&family=Satisfy&family=Tangerine&family=Titillium+Web&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <div class="title-container"><a href="../index.html">
+        <div class="title-container"><a href="{% url 'index' %}">
                 <h1 id="Title">ONLY ONE</h1>
             </a>
         </div>
@@ -24,15 +24,15 @@
             <form>
                 <label class="first_label">
                     <p>Nombre de usuario</p>
-                    <input type="text" name="usuario">
+                    <input type="text" name="usuario" required>
                 </label>
                 <label>
                     <p>Fecha de nacimiento</p>
-                    <input type="date" name="fecha_de_nacimiento">
+                    <input type="date" name="fecha_de_nacimiento" required>
                 </label>
                 <label>
                     <p>Correo electronico</p>
-                    <input type="email" name="correo_electronico">
+                    <input type="email" name="correo_electronico" required>
                 </label>
                 <label>
                     <p>Contraseña</p>
@@ -43,7 +43,7 @@
             <div class="login">
                 <p>
                     ¿Ya tienes una cuenta?
-                    <a href="login.html" class="alogin">Inicia sesión</a>
+                    <a href="{% url 'login' %}" class="alogin">Inicia sesión</a>
                 </p>
             </div>
         </div>

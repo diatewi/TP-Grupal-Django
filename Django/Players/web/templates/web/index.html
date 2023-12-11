@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Only One</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'web/styles/index.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Alice&family=Berkshire+Swash&family=Cinzel&family=Delius&family=EB+Garamond&family=Fredericka+the+Great&family=Great+Vibes&family=Gugi&family=Henny+Penny&family=Homemade+Apple&family=IBM+Plex+Serif&family=IM+Fell+English+SC&family=Julius+Sans+One&family=La+Belle+Aurore&family=Lemonada&family=Macondo&family=Old+Standard+TT:ital@0;1&family=Pinyon+Script&family=Rubik+Marker+Hatch&family=Rubik+Microbe&family=Satisfy&family=Tangerine&family=Titillium+Web&display=swap" rel="stylesheet">
@@ -14,82 +16,82 @@
     <header>
         <div class="title-container"><h1 id="Title">ONLY ONE</h1></div>
         <div class="accounts-container">
-            <a href="pages/login.html" class="login">Iniciar sesion</a>
-            <a href="pages/signup.html" class="signup">Registrarse</a>                        
+            <a href="{% url 'login' %}" class="login">Iniciar sesion</a>
+            <a href="{% url 'signup' %}" class="signup">Registrarse</a>                        
         </div>
     </header>
     <main>
         <h2 class="section-title animate__animated animate__jackInTheBox">Elige tu juego</h2>
         <section class="games">
             <article id="lol">
-                <a href="pages/games/league of legends/find-players.html">
-                    <img src="resources/games/league of legends.webp" alt="league of legends" title="League of legends">
+                <a href="{% url 'groups_list' game='League-of-legends' %}">
+                    <img src="{% static 'web/resources/games/league of legends.webp' %}" alt="league of legends" title="League of legends">
                     <p class="centrado">League of legends</p>
                 </a>
             </article>
             <article id="valorant">
-                <a href="pages/games/valorant/find-players.html">
-                    <img src="resources/games/valorant.jpg" alt="VALORANT" title="VALORANT">
+                <a href="{% url 'groups_list' game='Valorant' %}">
+                    <img src="{% static 'web/resources/games/valorant.jpg' %}" alt="VALORANT" title="VALORANT">
                     <p class="centrado">VALORANT</p>
                 </a>
             </article>
             <article id="gta">
-                <a href="pages/games/grand theft auto v/find-players.html">
-                    <img src="resources/games/gta.jpg" alt="Gta V" title="Grand Theft Auto V">
+                <a href="{% url 'groups_list' game='Grand-Theft-Auto-V' %}">
+                    <img src="{% static 'web/resources/games/gta.jpg' %}" alt="Gta V" title="Grand Theft Auto V">
                     <p class="centrado">Grand Theft Auto V</p>
                 </a>
             </article>
             <article id="counter">
-                <a href="pages/games/counter strike/find-players.html">
-                    <img src="resources/games/counter strike.webp" alt="Counter-Strike" title="Counter-Strike">
+                <a href="{% url 'groups_list' game='Counter-Strike' %}">
+                    <img src="{% static 'web/resources/games/counter strike.webp' %}" alt="Counter-Strike" title="Counter-Strike">
                     <p class="centrado">Counter-Strike</p>
                 </a>
             </article>
             <article id="wow">
-                <a href="pages/games/world of warcraft/find-players.html">
-                    <img src="resources/games/world of warcraft.jpg" alt="World of Warcraft" title="World of Warcraft">
+                <a href="{% url 'groups_list' game='World-of-Warcraft' %}">
+                    <img src="{% static 'web/resources/games/world of warcraft.jpg' %}" alt="World of Warcraft" title="World of Warcraft">
                     <p class="centrado">World of Warcraft</p>
                 </a>
             </article>
             <article id="genshin">
-                <a href="pages/games/genshin impact/find-players.html">
-                    <img src="resources/games/genshin impact.jpg" alt="Genshin Impact" title="Genshin Impact">
+                <a href="{% url 'groups_list' game='Genshin-Impact' %}">
+                    <img src="{% static 'web/resources/games/genshin impact.jpg' %}" alt="Genshin Impact" title="Genshin Impact">
                     <p class="centrado">Genshin Impact</p>
                 </a>
             </article>
             <article id="fortnite">
-                <a href="pages/games/fortnite/find-players.html">
-                    <img src="resources/games/fortnite.jpg" alt="Fortnite" title="Fortnite">
+                <a href="{% url 'groups_list' game='Fortnite' %}">
+                    <img src="{% static 'web/resources/games/fortnite.jpg' %}" alt="Fortnite" title="Fortnite">
                     <p class="centrado">Fortnite</p>
                 </a>
             </article>
             <article id="minecraft">
-                <a href="pages/games/minecraft/find-players.html">
+                <a href="{% url 'groups_list' game='Minecraft' %}">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlT9UEoEO3kyF4Ii8KChhDqyAk7Ay3CH1V3Q&usqp=CAU" alt="Minecraft" title="Minecraft">
                     <p class="centrado">Minecraft</p>
                 </a>
             </article>
             <article id="warzone">
-                <a href="pages/games/call of duty warzone/find-players.html">
+                <a href="{% url 'groups_list' game='Call-of-duty-Warzone' %}">
                     <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1962663/capsule_616x353.jpg?t=1692298772" alt="Call Of Duty: Warzone" title="Call Of Duty: Warzone">
                     <p class="centrado">Call Of Duty: Warzone</p>
                 </a>
             </article>
             <article id="fortnite">
-                <a href="pages/games/apex legends/find-players.html">
-                    <img src="resources/games/apex legends.jpg" alt="Apex Legends" title="Apex Legends">
+                <a href="{% url 'groups_list' game='Apex-Legends' %}">
+                    <img src="{% static 'web/resources/games/apex legends.jpg' %}" alt="Apex Legends" title="Apex Legends">
                     <p class="centrado">Apex Legends</p>
                 </a>
             </article>
             <article id="overwatch">
-                <a href="pages/games/overwatch 2/find-players.html">
-                    <img src="resources/games/overwatch.jpg" alt="Overwatch 2" title="Overwatch 2">
+                <a href="{% url 'groups_list' game='Overwatch-2' %}">
+                    <img src="{% static 'web/resources/games/overwatch.jpg' %}" alt="Overwatch 2" title="Overwatch 2">
                     <p class="centrado">Overwatch 2</p>
                 </a>
             </article>
             <article id="dota">
-                <a href="pages/games/dota 2/find-players.html">
-                    <img src="resources/games/dota.jpg" alt="Dota 2" title="Dota 2">
+                <a href="{% url 'groups_list' game='Dota-2' %}">
+                    <img src="{% static 'web/resources/games/dota.jpg' %}" alt="Dota 2" title="Dota 2">
                     <p class="centrado">Dota 2</p>
                 </a>
             </article>
@@ -106,7 +108,7 @@
         </section>
     </main>
     <footer class="footer">
-        <p class="centrado contact"><a href="pages/contact.html">Contactanos</a><a href="https://instagram.com/maty__ldm" target="_blank"><img src="https://s-lol-web.op.gg/images/icon/icon-logo-instagram.svg?v=1698136448120"></a></p>
+        <p class="centrado contact"><a href="{% url 'contact' %}">Contactanos</a><a href="https://instagram.com/maty__ldm" target="_blank"><img src="https://s-lol-web.op.gg/images/icon/icon-logo-instagram.svg?v=1698136448120"></a></p>
         <p class="centrado">© 2023. Todos los derechos reservados.</p>
     </footer>
 </body>

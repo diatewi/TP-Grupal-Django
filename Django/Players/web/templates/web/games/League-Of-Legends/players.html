@@ -1,0 +1,7 @@
+{% extends '../../base-players.html' %}
+{% load static %}
+
+
+{% block title %} Only One: League of Legends {% endblock %}
+{% block nav_players %} {% url 'players_list' game='League-of-legends'%} {% endblock %}
+{% block nav_groups %} {% url 'groups_list' game='League-of-legends' %} {% endblock %}

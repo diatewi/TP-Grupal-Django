@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Alice&family=Berkshire+Swash&family=Cinzel&family=Delius&family=EB+Garamond&family=Fredericka+the+Great&family=Great+Vibes&family=Gugi&family=Henny+Penny&family=Homemade+Apple&family=IBM+Plex+Serif&family=IM+Fell+English+SC&family=Julius+Sans+One&family=La+Belle+Aurore&family=Lemonada&family=Macondo&family=Old+Standard+TT:ital@0;1&family=Pinyon+Script&family=Rubik+Marker+Hatch&family=Rubik+Microbe&family=Satisfy&family=Tangerine&family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'web/styles/games.css' %}">
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <a href="{% url 'index' %}">
+                <h1 id="Title">ONLY ONE</h1>
+            </a>
+        </div>
+        <div class="accounts-container">
+            <a href="{% url 'login' %}" class="login">Iniciar sesion</a>
+            <a href="{% url 'signup' %}" class="signup">Registrarse</a>                        
+        </div>
+    </header>
+    <nav>
+        <a href="{% block nav_players %}{% url 'default_nav' %}{% endblock %}" class="find-players">
+            <h2>Buscar jugadores</h2>
+        </a>
+        <a href="{% block nav_groups %}{% url 'default_nav' %}{% endblock %}" class="find-group">
+            <h2 style="border-bottom: 1.5px rgb(49, 0, 135) solid;">Buscar grupo</h2>
+        </a>
+    </nav>
+    <main>
+        <h3 class="groups-title">GRUPOS DISPONIBLES</h3>
+        <form class="filter">
+            <label>
+                Servidor:
+                <select name="server" class="servers">
+                {% for server in posible_servers %}
+                    <option>{{ server }}</option>
+                {% endfor %}
+                </select>
+            </label>
+            <label>
+                Modo de juego:
+                <select name="gamemode" class="gamemodes">
+                    {% for gamemode in posible_gamemodes %}
+                        <option>{{ gamemode }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <input type="submit" value="Filtrar">
+        </form>
+        
+        <section class="group-container">
+        {% for group in groups %}
+            <article class="groups">
+                <div> 
+                    <span>{{ group.gamemode }}</span>
+                    <span>{{ group.server }}</span>
+                </div>
+                <ol>
+                    Integrantes:
+                    {% if group.player_name1|default:"None" != "None" %}
+                        <li class="available">{{ group.player_name1 }}</li>
+                    {% else %}
+                        <li>Espacio disponible</li>
+                    {% endif %}
+                    {% if group.player_name2|default:"None" != "None" %}
+                        <li class="available">{{ group.player_name2 }}</li>
+                    {% else %}
+                        <li>Espacio disponible</li>
+                    {% endif %}
+                    {% if group.player_name3|default:"None" != "None" %}
+                        <li class="available">{{ group.player_name3 }}</li>
+                    {% else %}
+                        <li>Espacio disponible</li>
+                    {% endif %}
+                    {% if group.player_name4|default:"None" != "None" %}
+                        <li class="available">{{ group.player_name4 }}</li>
+                    {% else %}
+                        <li>Espacio disponible</li>
+                    {% endif %}
+                </ol>
+                <p class="discord">Discord: {{ group.discord }}</p>
+                <section class="crud">
+                    <a href="{% url 'update_group' pk=group.id %}"><img src="{% static 'web/resources/edit.png' %}" alt=""></a>
+                    <a href="{% url 'delete_group' pk=group.id %}"><img src="{% static 'web/resources/delete.png' %}" alt=""></a>
+                </section>
+            </article>
+        {% empty %}
+            <div class="empty-container">
+                <p class="empty">No hay grupos cargados.</p>
+            </div>
+        {% endfor %}
+            <article style="align-self: center;">
+                <div class="create-group-container">
+                    <a href="{% url 'create_group' %}" class="create-group">CREAR GRUPO</a>
+                </div>
+            </article>
+        </section>
+    </main>
+    {% if groups|length > 6 %}
+        <footer>
+            <div class="footer">
+                <p class="centrado contact"><a href="{% url 'contact' %}">Contactanos</a><a href="https://instagram.com/maty__ldm" target="_blank"><img src="https://s-lol-web.op.gg/images/icon/icon-logo-instagram.svg?v=1698136448120" alt="Instagram"></a></p>
+                <p class="centrado">© 2023. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    {% else %}
+        <footer style="position: absolute; bottom: 0; width: 100%;">
+            <p class="centrado contact"><a href="{% url 'contact' %}">Contactanos</a><a href="https://instagram.com/maty__ldm" target="_blank"><img src="https://s-lol-web.op.gg/images/icon/icon-logo-instagram.svg?v=1698136448120" alt="Instagram"></a></p>
+            <p class="centrado">© 2023. Todos los derechos reservados.</p>
+        </footer>
+    {% endif %}
+</body>
+</html>

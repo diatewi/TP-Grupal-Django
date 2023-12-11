@@ -1,0 +1,18 @@
+{% extends 'web/base-general.html' %}
+{% load static %}
+
+{% block title %} Only One: borrar grupo {% endblock %}
+
+{% block stylesheet %} {% static 'web/styles/create-group.css' %} {% endblock %}
+
+{% block main %} 
+    <h3>Borrar la siguiente vista</h3>
+    <div class="form_container">
+        <form method="post">
+            {% csrf_token %}
+            <p>Estas seguro de querer borrar el grupo de {{ object }}? </p>
+            {{ form }}
+            <input type="submit" value="confirmar" style="color: white; font-family: Cambria, Cochin">
+        </form>
+    </div>
+{% endblock %}

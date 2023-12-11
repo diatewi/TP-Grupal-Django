@@ -1,0 +1,17 @@
+{% extends 'web/base-general.html' %}
+{% load static %}
+
+{% block title %} Only One: modificar grupo {% endblock %}
+
+{% block stylesheet %} {% static 'web/styles/create-group.css' %} {% endblock %}
+
+{% block main %} 
+    <h3>Datos del grupo</h3>
+    <div class="form_container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Modificar" style="color: white; font-family: Cambria, Cochin">
+        </form>
+    </div>
+{% endblock %}

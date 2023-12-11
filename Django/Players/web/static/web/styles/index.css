@@ -125,8 +125,9 @@ img:hover{
     margin-top: 0;
 }
 .footer{
-    position: relative;
-    padding: .5vw 0 .5vw 0;
+    position: fixed;
+    bottom: 0;
+    padding: .5vw 0 0 0;
     background-color: rgb(22, 22, 22);
 }
 footer p{
